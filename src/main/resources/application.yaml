@@ -1,0 +1,40 @@
+server:
+  port: 8081
+
+
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/db_1"
+    username: "postgres"
+    password: "123"
+    driver-class-name: "org.postgresql.Driver"
+    #Цветной шрифт
+  output:
+    ansi:
+      enabled: "ALWAYS"
+
+  jpa:
+    generateDdl: "true"
+    hibernate:
+      ddlAuto: "update"
+    showSql: "true"
+    databasePlatform: "org.hibernate.dialect.PostgreSQLDialect"
+    properties:
+      hibernate:
+        default_schema: "netology"
+
+  servlet:
+    multipart:
+      maxFileSize: "104857600"
+      maxRequestSize: "104857600"
+
+
+jwt:
+  signingKey: "ymLTU8rq83j4fmJZj60wh4OrMNuntIj4fmJ"
+
+logging:
+  file.path: "./src/main/resources/log"
+    #level:
+    #org.springframework.web: "ERROR"
+    #com.howtodoinjava: "DEBUG"
+  #org.hibernate: "ERROR"
